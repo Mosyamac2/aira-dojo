@@ -5,6 +5,7 @@
 # LICENSE file in the root directory of this source tree.
 
 from dojo.core.solvers.llm_helpers.backends.gdm import GDMClient
+from dojo.core.solvers.llm_helpers.backends.gigachat_llm import GigaChatClient
 from dojo.core.solvers.llm_helpers.backends.lite_llm import LiteLLMClient
 from dojo.core.solvers.llm_helpers.backends.open_ai import OpenAIClient
 
@@ -17,5 +18,7 @@ def get_client(client_cfg):
             return LiteLLMClient(client_cfg)
         case "gdm":
             return GDMClient(client_cfg)
+        case "gigachat":
+            return GigaChatClient(client_cfg)
         case _:
             raise Exception(f"Unknown API: {client_cfg['api']}")

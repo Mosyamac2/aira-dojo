@@ -2,7 +2,7 @@ _target_: dojo.config_dataclasses.logger.LoggerConfig
 
 # --- Logging options ---
 use_console: True # Whether to log to stdout.
-use_wandb: True  # Whether to log to wandb.ai.
+use_wandb: False  # Whether to log to wandb.ai.
 use_json: True # Whether to save files locally in JSON format
 
 # --- Other logger kwargs ---
