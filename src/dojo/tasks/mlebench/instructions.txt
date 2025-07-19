@@ -1,29 +1,27 @@
-You are participating in *MLE-bench*, an offline version of Kaggle competitions adapted to test the coding ability of agents like yourself.
+Вы участвуете в *MLE-bench*, офлайн-версии соревнований Kaggle по разработке ML-моделей, адаптированной для проверки навыков программирования таких агентов, как вы.
 
-You will be given a machine learning task. You must solve the task by training a model and running the model on the test set to produce a submission file. You may not hand-label the data to produce a submission file.
+Вам будет предложено задание по разработке модели машинного обучения. Вы должны решить его, обучив модель и запустив её на тестовом наборе для создания файла с результатами. Разметка данных вручную для создания файла с результатами не допускается.
 
-BENCHMARK INSTRUCTIONS
+ИНСТРУКЦИЯ ПО ТЕСТИРОВАНИЮ
 ------
-First, please read the instructions below which are specific to our benchmark setup. Note, these instructions can be found again in `/home/instructions.txt`.
+Сначала, пожалуйста, ознакомьтесь с приведёнными ниже инструкциями, относящимися к нашей настройке бенчмарка. Обратите внимание, что эти инструкции также можно найти в файле `/home/instructions.txt`.
 
-- **Competition-specific instructions**: The instructions for the competition are available in `./data/description.md`. Read this file to understand the problem setup for the competition you are currently solving.
-- **Dataset**: The dataset files for the competition are available in `./data/`.
-- **Submission**: We have simplified all competition types to use a simple CSV submission format. Regardless of what the competition instructions say, you MUST produce a submission file in the current directory. We will only evaluate submissions found at this path; failure to submit a `submission.csv` at this path will result in a failed attempt.
-- **Test set**: In general, since we do not have access to the original test labels, we have constructed our own train/test split for each competition. As such, the dataset you see in `./data/` may differ slightly from what is described in the competition instructions. Nevertheless the files available to you should otherwise be similar to the original and you should proceed with the competition task on the train/test splits available to you.
-- **Cheating**: You are not allowed to view others' solutions to this competition. If we detect that your submission is plagiarized from others, the submission will be disqualified.
+- **Инструкции, относящиеся к конкретному заданию**: Инструкции по задачнию на построение ML-модели доступны в файле `./data/description.md`. Прочитайте этот файл, чтобы понять условия задания, который вы сейчас решаете.
+- **Набор данных**: Файлы наборов данных для конкурса доступны в файле `./data/`.
+- **Решение**: Мы используем простой формат формирования решения - CSV. Независимо от того, что указано в правилах конкурса, вы ОБЯЗАНЫ создать файл заявки в текущем каталоге. Мы будем оценивать только заявки, найденные по этому пути; отсутствие файла `submission.csv` по этому пути приведёт к неудачной попытке.
 
-Your submission will be graded based on the metric in the competition-specific instructions. Your goal is to achieve the best score possible on the competition task.
+Ваша работа будет оцениваться на основе метрики, указанной в описании задания на построение ML-модели. Ваша цель — построить ML-модель с максимально возможной метрикой качества.
 
-Wherever there is a conflict between the points above and the competition-specific instructions in `./data/description.md`, the above points should always take priority since these are always true for our offline benchmark setup.
+В случае противоречий между вышеуказанными пунктами и инструкциями, относящимися к конкретному заданию, в файле `./data/description.md`, вышеуказанные пункты всегда имеют приоритет.
 
-ADDITIONAL NOTES
+ДОПОЛНИТЕЛЬНЫЕ ПРИМЕЧАНИЯ
 ------
 
-- **Compute**: You have access to ${HARDWARE} with the appropriate drivers installed.
-- **Total Runtime**: You have a maximum of ${TIME_LIMIT} to attempt this task. You may iteratively develop your solution within this time frame, but bear in mind that program runtime also counts towards this limit.
-- **Total Steps**: You have a maximum of ${STEP_LIMIT} steps to submit your solution.
-- You will be informed of the remaining time and steps at each step.
-- **Use as much of the available time as possible to refine and optimize your submission**: Your goal is to achieve the best possible score, not just to submit your first working solution. Consider strategies like manually spot-checking predictions, building custom validation sets and grading functions, and comparing different algorithms. You may keep working until the time limit expires -- as long as your best submission is stored at the designated location at the end of your run, it will be picked up for grading.
+- **Вычисления**: У вас есть доступ к ${HARDWARE} с установленными соответствующими драйверами.
+- **Общее время выполнения**: У вас есть максимум ${TIME_LIMIT} на выполнение этого задания. Вы можете итеративно разрабатывать своё решение в течение этого времени, но имейте в виду, что время выполнения программы также учитывается в этом ограничении.
+- **Общее количество шагов**: У вас есть максимум ${STEP_LIMIT} шагов для отправки решения.
+- Вы будете получать информацию об оставшемся времени и количестве шагов на каждом этапе.
+- **Используйте как можно больше доступного времени для уточнения и оптимизации вашего решения**: Ваша цель — получить максимально возможный результат, а не просто отправить первое работающее решение. Рассмотрите такие стратегии, как ручная выборочная проверка прогнозов, создание собственных наборов данных для проверки и функций оценки, а также сравнение различных алгоритмов. Вы можете продолжать работу до истечения лимита времени — при условии, что ваша лучшая работа будет храниться в указанном месте по окончании запуска, она будет использована для оценки.
 
-COMPETITION INSTRUCTIONS
+ИНСТРУКЦИЯ ПО ЗАДАНИЮ ПОСТРОЕНИЯ ML-МОДЕЛИ
 ------

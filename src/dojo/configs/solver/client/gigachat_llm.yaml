@@ -1,6 +1,6 @@
 _target_: dojo.config_dataclasses.client.base.ClientConfig
 api: gigachat
-model_id: "GigaChat-2"  # or your actual model name
+model_id: "GigaChat-2-Max"  # or your actual model name
 base_url: https://gigachat.devices.sberbank.ru/api/v1
 use_azure_client: False
 provider: gigachat

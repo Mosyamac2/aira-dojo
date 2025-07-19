@@ -9,7 +9,7 @@ defaults:
   - override memory@debug_memory: debug_memory # Enables Debug Memory operator
 
 # --- Search Configuration ---
-improvement_steps: 5                   # Number of improvement iterations to perform
+improvement_steps: 3                   # Number of improvement iterations to perform
 data_preview: true        # Whether to provide the agent with a preview of the data before execution
 
 # --- Debugging Configuration ---ba

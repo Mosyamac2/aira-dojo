@@ -8,13 +8,30 @@ from gigachat import GigaChat
 from dotenv import load_dotenv
 load_dotenv()
 
+# Global token cache
+GIGACHAT_TOKEN_CACHE = {
+    "token": "",
+    "expiry": 0
+}
+
+
 def fetch_and_set_gigachat_token():
+    # Reuse token if still valid (tokens typically last 1 hour)
+    if GIGACHAT_TOKEN_CACHE["token"]!="" and time.time() < GIGACHAT_TOKEN_CACHE["expiry"]:
+        return GIGACHAT_TOKEN_CACHE["token"]
+
     giga = GigaChat(
-        credentials=os.environ["GIGACHAT_API_KEY"],
+        credentials=os.environ.get("GIGACHAT_API_KEY"),
+        scope="GIGACHAT_API_PERS",
+        verify_ssl_certs=False
     )
     response = giga.get_token()
-    token = response.access_token
-    return token
+
+    # Cache token with 55-minute expiry (to be safe)
+    GIGACHAT_TOKEN_CACHE["token"] = response.access_token
+    GIGACHAT_TOKEN_CACHE["expiry"] = time.time() + 3300  # 55 minutes
+
+    return response.access_token
 
 
 @dataclass
@@ -80,6 +97,7 @@ class GigaChatClient:
             json=payload,
             headers=headers,
             timeout=60,
+            verify=False
         )
         response.raise_for_status()
         latency = time.monotonic() - start_time
